@@ -10,13 +10,14 @@ body{
     flex-direction: row;
     flex-wrap: wrap;
     align-content: center;
-    justify-content: space-between;
+    justify-content:space-between;
     align-items: center;
     
 }
 .logo-img{
     height: 80px;
     width: 300px;
+    
 }
 
 
@@ -30,14 +31,15 @@ body{
     border: 1px solid #000;
     width: 100%;
     max-width: 600px; 
-    height: 45px;
+    height: 50px;
+
 }
 
 .buscador-input {
     flex: 1;
     border: none;
     outline: none;
-    padding: 0 15px;
+    padding: 0 120px;
     font-size: 16px;
     color: #666; 
 }
@@ -56,4 +58,24 @@ body{
 
 .buscador-boton:hover {
     background-color: #333;
+}
+
+ul{
+    display: flex;
+    list-style: none;
+}
+ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: large;
+    padding: 20px;
+    
+}
+a:hover{
+    background-color: #8267ee;
+}
+i{  
+
+    background-color: white;color: white; 
+
 }

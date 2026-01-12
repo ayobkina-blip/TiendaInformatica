@@ -27,3 +27,7 @@ Route::get('/menu', function () {
 Route::get('/registro', [RegisterController::class, 'showRegister'])->name('registro');
 
 Route::post('/registro', [RegisterController::class, 'crearCuenta'])->name('register.post');
+
+// LOGOUT
+
+Route::get('/logout', [LoginController::class, 'logout']) ->name('logout');
