@@ -11,7 +11,10 @@ class ProductosController extends Controller
     //Mostrar lista de todos los productos
     public function index()
     {
-        return productos::all();
+        $productos = productos::all();
+
+        return view('menu', ['productos'=> $productos]);
+        
     }
 
     //Crea y valida el registro de producto (FALTA TERMINAR)

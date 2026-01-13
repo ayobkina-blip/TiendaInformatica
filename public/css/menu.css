@@ -30,6 +30,7 @@ body {
 
 .buscador-caja {
     display: flex;
+    margin-right: 175px;
     justify-content: center;
     background-color: white;
     border: 1px solid #000;
@@ -99,4 +100,25 @@ ul li a:hover {
 .icon-sm {
     width: 18px;
     height: 18px;
+}
+.second-header{
+    background-color: #6745eb;
+    padding: 20px 40px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+.second-header ul li a{
+    margin-right: 40px;
+}
+
+.second-header ul li a:hover{
+    border: 1px solid white;
+}
+
+.pru{
+    color: black;
 }

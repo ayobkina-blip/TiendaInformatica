@@ -23,6 +23,7 @@ return new class extends Migration
             $table->string('descripcion');
             $table->integer('precio');
             $table->integer('stock');
+            $table->string('enlace');
             $table->foreignId('categoria_id');
             $table->timestamps();
         });

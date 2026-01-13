@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>@yield('titulo')</title>
     <link rel="stylesheet" href="{{asset('css/menu.css')}}">
+    @stack('styles')
 </head>
 
 <body>
@@ -18,7 +19,7 @@
     <div class="contenedor-principal">
         <form class="buscador-caja">
             <input type="text" class="buscador-input" placeholder="Buscar artículos, marcas...">
-            {{-- Icono de lupa dentro del botón --}}
+            {{-- Icono de lupa --}}
             <button type="submit" class="buscador-boton">
                 <x-heroicon-o-magnifying-glass class="icon-sm icon" />
             </button>
@@ -28,13 +29,13 @@
     <ul>
         {{-- Carrito de compra --}}
         <li>
-            <a href=" route('cesta') ">
+            <a href=" {{-- route('cesta') --}} ">
                 <x-heroicon-o-shopping-cart class="icon-nav icon" />
             </a>
         </li>
         {{-- Mi cuenta --}}
         <li>
-            <a href=" route('panel') ">
+            <a href="{{-- route('panel') --}}  ">
                 <x-heroicon-o-user-circle class="icon-nav icon" />
             </a>
         </li>
@@ -45,6 +46,42 @@
             </a>
         </li>
     </ul>
+</header>
+<header class="second-header">
+
+    <ul>
+        <li>
+            <a href="{{-- route('ordenadores') --}}">
+                Ordenadores
+            </a>
+        </li>
+        <li>
+            <a href="{{-- route('portatiles') --}}">
+                Portatiles
+            </a>
+        </li>
+        <li>
+            <a href="{{-- route('monitores') --}}">
+                Monitores
+            </a>
+        </li>
+        <li>
+            <a href="{{-- route('perifericos') --}}">
+                Perifericos
+            </a>
+        </li>
+        <li>
+            <a href="{{-- route('componentes') --}}">
+                Componenentes
+            </a>
+        </li>
+        <li>
+            <a href="{{-- route('accesorios') --}}">
+                Accesorios
+            </a>
+        </li>
+    </ul>
+
 </header>
     
     @yield('contenido')  

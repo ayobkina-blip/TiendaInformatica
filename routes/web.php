@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\ProductosController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -15,9 +16,8 @@ Route::get('/', [LoginController::class, 'showLogin'])->name('login');
 Route::post('/', [LoginController::class, 'iniciarSesion'])->name('login.post');
 
 //Ruta a menu
-Route::get('/menu', function () {
-    return view('menu');
-})->middleware('auth');
+Route::get('/menu', function () { return view('menu'); })->middleware('auth');
+Route::get('/menu', [ProductosController::class, 'index'])->name('productos');
 
 
 //REGISTER
