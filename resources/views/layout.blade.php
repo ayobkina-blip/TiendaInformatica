@@ -12,27 +12,40 @@
 
     <!-- Encabezado -->
 
-    <header class="main-header">
-    
-        <img src="{{ asset('images/logo.png') }}" class="logo-img" alt="">
+   <header class="main-header">
+    <img src="{{ asset('images/logo.png') }}" class="logo-img" alt="Logo">
 
-        <div class="contenedor-principal">
-            <form class="buscador-caja">
-                <input type="text" class="buscador-input" placeholder="Buscar artículos, marcas...">
-                <button type="submit" class="buscador-boton">Buscar</button>
-            </form>
-        </div>
+    <div class="contenedor-principal">
+        <form class="buscador-caja">
+            <input type="text" class="buscador-input" placeholder="Buscar artículos, marcas...">
+            {{-- Icono de lupa dentro del botón --}}
+            <button type="submit" class="buscador-boton">
+                <x-heroicon-o-magnifying-glass class="icon-sm icon" />
+            </button>
+        </form>
+    </div>
 
-        <ul>
-            <li><a href=" route('cesta') "><i class="fa-solid fa-basket-shopping"></i></a></li>
-            <li><a href=" route('cesta') ">Mi cuenta ICONO</a></li>
-            <li><a href="{{ route('logout') }}">Cerrar sesion</a></li>
-            
-            
-            
-        </ul>
-
-    </header>
+    <ul>
+        {{-- Carrito de compra --}}
+        <li>
+            <a href=" route('cesta') ">
+                <x-heroicon-o-shopping-cart class="icon-nav icon" />
+            </a>
+        </li>
+        {{-- Mi cuenta --}}
+        <li>
+            <a href=" route('panel') ">
+                <x-heroicon-o-user-circle class="icon-nav icon" />
+            </a>
+        </li>
+        {{-- Cerrar sesión --}}
+        <li>
+            <a href="{{ route('logout') }}">
+                <x-heroicon-o-arrow-right-on-rectangle class="icon-nav text-red icon" />
+            </a>
+        </li>
+    </ul>
+</header>
     
     @yield('contenido')  
 
