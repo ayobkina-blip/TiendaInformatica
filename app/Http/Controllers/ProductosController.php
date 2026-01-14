@@ -29,10 +29,15 @@ class ProductosController extends Controller
     }
 
     //Muestra un solo producto
-    public function show(productos $productos)
+   /* public function show(productos $productos)
     {
-        
-    }
+        $producto = productos::find($id);
+        if(!$producto){
+            return redirect()->route('menu')->with('error', 'Producto no encontrado.');
+
+        }
+        --return view('components.descripcionProducto', ['producto'=>$producto]);
+    }*/
 
     /**
      * Show the form for editing the specified resource.
