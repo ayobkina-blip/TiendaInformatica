@@ -28,16 +28,17 @@ class ProductosController extends Controller
         return response()->json($productos, 201);
     }
 
-    //Muestra un solo producto
-   /* public function show(productos $productos)
-    {
-        $producto = productos::find($id);
-        if(!$producto){
-            return redirect()->route('menu')->with('error', 'Producto no encontrado.');
+   // Muestra un solo producto
 
-        }
-        --return view('components.descripcionProducto', ['producto'=>$producto]);
-    }*/
+    public function show(productos $producto)
+    {
+        return view('descripcion-producto', compact('producto'));
+    }
+
+    public function añadir(productos $producto)
+    {
+        
+    }
 
     /**
      * Show the form for editing the specified resource.

@@ -14,7 +14,8 @@
     <!-- Encabezado -->
 
    <header class="main-header">
-    <img src="{{ asset('images/logo.png') }}" class="logo-img" alt="Logo">
+    <a href="{{ route('menu') }}">
+    <img src="{{ asset('images/logo.png') }}" class="logo-img" alt="Logo"></a>
 
     <div class="contenedor-principal">
         <form class="buscador-caja">

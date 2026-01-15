@@ -1,7 +1,7 @@
-<a class="ruta-producto" href="{{ route('registro') }}">
+<a class="ruta-producto" href="{{ route('productos.show', $producto->id) }}">
 <div class="producto-card">
 
-    <img class="imagen-producto" src="{{  asset('images/fondo1.png') {{-- $producto->enlace --}} }}" alt="">
+    <img class="imagen-producto" src="{{ asset('storage/' . $producto->enlace) }}" alt="">
 
     <div class="contenedor-producto-vista">
 
