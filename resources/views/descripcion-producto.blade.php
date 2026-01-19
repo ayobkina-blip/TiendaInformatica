@@ -20,15 +20,22 @@
                 <p>{{$producto->descripcion}}</p>
             </div>
 
-            <div class="descripcion">
-                <select name="stock" id="stock">
-                    @for ($i = 1; $i <= $producto->stock; $i++)
-                        <option value="{{ $i }}">{{ $i }}</option>
-                    @endfor
-                </select>
-            </div>
+            <form action="{{ route('cesta.añadir', $producto->id) }}" method="POST">
+                @csrf
+                <div class="descripcion">
+                    <label for="cantidad">Cantidad:</label>
+                    <select name="cantidad" id="cantidad">
+                        @for ($i = 1; $i <= $producto->stock; $i++)
+                            <option value="{{ $i }}">{{ $i }}</option>
+                        @endfor
+                    </select>
+                </div>
+                <button id="añadir" class="btn-comprar" type="submit">Añadir a la cesta</button>
+            </form>
 
-            <button id="añadir" class="btn-comprar">Añadir al carrito</button>
+            
+
+        </form>
         </div>
     </div>
 </div>

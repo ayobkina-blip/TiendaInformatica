@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\productos;
+use App\Models\User;
+use App\Models\Cesta;
 use Illuminate\Http\Request;
 
 class ProductosController extends Controller
@@ -35,10 +37,48 @@ class ProductosController extends Controller
         return view('descripcion-producto', compact('producto'));
     }
 
-    public function añadir(productos $producto)
+    public function añadir(Request $request, productos $producto)
     {
+        $id = auth()->id();
         
+        $cantidad = $request->input('cantidad');
+
+        if (!$cantidad) {
+            return redirect()->back()->with('error');
+        }
+
+        Cesta::create([
+            'usuario_id' => $id,
+            'producto_id' => $producto->id,
+            'cantidad' => $cantidad
+        ]);
+
+        return redirect()->back()->with('mensaje', 'Producto añadido a la cesta');
     }
+
+    public function quitar(Cesta $cesta)
+    {
+        try {
+            // Elimina el registro de la base de datos
+            $cesta->delete();
+            
+            return back()->with('success', 'Producto quitado de la cesta.');
+        } catch (\Exception $e) {
+            return back()->with('error', 'No se pudo eliminar el producto.');
+        }
+    }
+
+    public function showCesta()
+    {
+        $userId = auth()->id();
+
+        $cesta = Cesta::where('usuario_id', $userId)->with('producto')->get();
+
+        return view('cesta', compact('cesta'));
+    }
+    // app/Models/Cesta.php
+
+    
 
     /**
      * Show the form for editing the specified resource.

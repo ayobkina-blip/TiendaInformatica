@@ -30,7 +30,7 @@
     <ul>
         {{-- Carrito de compra --}}
         <li>
-            <a href=" {{-- route('cesta') --}} ">
+            <a href=" {{route('cesta')}} ">
                 <x-heroicon-o-shopping-cart class="icon-nav icon" />
             </a>
         </li>

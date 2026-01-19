@@ -50,14 +50,14 @@
     cursor: pointer;
     width: fit-content;
 }                              
-#stock {
+#cantidad {
     padding: 10px 20px;
     border-radius: 8px;
     border: 1px solid #ccc;
     font-size: 16px;
     cursor: pointer;
 }
-#stock option {
+#cantidad option {
     font-size: 18px;
     background-color: #fff;
 }

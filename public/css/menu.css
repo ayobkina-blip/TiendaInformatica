@@ -5,7 +5,7 @@ body {
 }
 
 .main-header {
-    background-color: #6745eb;
+    background-color: rgba(107, 62, 238);
     padding: 20px 40px;
     display: flex;
     flex-direction: row;
@@ -102,7 +102,7 @@ ul li a:hover {
     height: 18px;
 }
 .second-header{
-    background-color: #6745eb;
+    background-color: rgba(107, 62, 238);
     padding: 20px 40px;
     display: flex;
     flex-direction: row;

@@ -23,4 +23,10 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/menu/{producto}', [ProductosController::class, 'show'])->name('productos.show');
     
     Route::post('/productos', [ProductosController::class, 'store'])->name('productos.store');
+
+    Route::post('/menu/añadir/{producto}', [ProductosController::class, 'añadir'])->name('cesta.añadir');
+
+    Route::get('/cesta', [ProductosController::class, 'showCesta'])->name('cesta');
+
+    Route::delete('/cesta/quitar/{cesta}', [ProductosController::class, 'quitar'])->name('cesta.quitar');
 });

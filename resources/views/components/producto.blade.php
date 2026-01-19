@@ -7,6 +7,7 @@
 
         <h3 class="nombre-producto"> {{$producto->name}}</h3>
         <h3 class="precio-producto">{{$producto->precio}}€</h3>
+        
 
     </div>
 

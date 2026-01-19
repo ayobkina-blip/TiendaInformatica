@@ -35,6 +35,13 @@ return new class extends Migration
             $table->foreignId('usuario_id');
 
         });
+        //Creacion de la tabla cesta
+        Schema::create('cesta', function(Blueprint $table) {
+            $table->id();
+            $table->foreignId('usuario_id');
+            $table->foreignId('producto_id');
+            $table->integer('cantidad');
+        });
 
     }
 
@@ -48,5 +55,6 @@ return new class extends Migration
         Schema::dropIfExists('productos');
         Schema::dropIfExists('categoria');
         Schema::dropIfExists('compras_realizadas');
+        Schema::dropIdExists('cesta');
     }
 };
