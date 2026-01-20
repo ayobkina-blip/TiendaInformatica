@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\productos;
 use App\Models\User;
 use App\Models\Cesta;
+use App\Models\Categorias;
 use Illuminate\Http\Request;
 
 class ProductosController extends Controller
@@ -58,14 +59,20 @@ class ProductosController extends Controller
 
     public function quitar(Cesta $cesta)
     {
-        try {
-            // Elimina el registro de la base de datos
-            $cesta->delete();
-            
-            return back()->with('success', 'Producto quitado de la cesta.');
-        } catch (\Exception $e) {
-            return back()->with('error', 'No se pudo eliminar el producto.');
-        }
+        
+        $cesta->delete();
+        
+        return back()->with('success', 'Producto quitado de la cesta.');
+        
+    }
+
+    public function indexCategorizado($categoriaDada)
+    {
+        $productos = productos::where('categoria_id', $categoriaDada)->get();
+
+        return view('menu', [
+            'productos' => $productos
+        ]);
     }
 
     public function showCesta()
@@ -76,7 +83,6 @@ class ProductosController extends Controller
 
         return view('cesta', compact('cesta'));
     }
-    // app/Models/Cesta.php
 
     
 

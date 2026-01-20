@@ -3,6 +3,7 @@
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\ProductosController;
+use App\Http\Controllers\PerfilController;
 use Illuminate\Support\Facades\Route;
 
 // LOGIN
@@ -19,6 +20,8 @@ Route::post('/registro', [RegisterController::class, 'crearCuenta'])->name('regi
 Route::middleware(['auth'])->group(function () {
     
     Route::get('/menu', [ProductosController::class, 'index'])->name('menu');
+
+    Route::get('/panel', [PerfilController::class, 'showPerfil'])->name('panel');
     
     Route::get('/menu/{producto}', [ProductosController::class, 'show'])->name('productos.show');
     
@@ -29,4 +32,6 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/cesta', [ProductosController::class, 'showCesta'])->name('cesta');
 
     Route::delete('/cesta/quitar/{cesta}', [ProductosController::class, 'quitar'])->name('cesta.quitar');
+
+    Route::get('/menu/categoria/{categoria}', [ProductosController::class, 'indexCategorizado'])->name('menu.categoria');
 });

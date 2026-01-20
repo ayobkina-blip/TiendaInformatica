@@ -36,7 +36,7 @@
         </li>
         {{-- Mi cuenta --}}
         <li>
-            <a href="{{-- route('panel') --}}  ">
+            <a href="{{ route('panel') }}  ">
                 <x-heroicon-o-user-circle class="icon-nav icon" />
             </a>
         </li>
@@ -52,32 +52,32 @@
 
     <ul>
         <li>
-            <a href="{{-- route('ordenadores') --}}">
+            <a href="{{ route('menu.categoria', 1) }}">
                 Ordenadores
             </a>
         </li>
         <li>
-            <a href="{{-- route('portatiles') --}}">
+            <a href="{{ route('menu.categoria', 2) }}">
                 Portatiles
             </a>
         </li>
         <li>
-            <a href="{{-- route('monitores') --}}">
+            <a href="{{ route('menu.categoria', 3) }}">
                 Monitores
             </a>
         </li>
         <li>
-            <a href="{{-- route('perifericos') --}}">
+            <a href="{{ route('menu.categoria', 4) }}">
                 Perifericos
             </a>
         </li>
         <li>
-            <a href="{{-- route('componentes') --}}">
+            <a href="{{ route('menu.categoria', 5) }}">
                 Componenentes
             </a>
         </li>
         <li>
-            <a href="{{-- route('accesorios') --}}">
+            <a href="{{ route('menu.categoria', 6) }}">
                 Accesorios
             </a>
         </li>
