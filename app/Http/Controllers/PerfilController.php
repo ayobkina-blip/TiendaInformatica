@@ -14,15 +14,19 @@ class PerfilController extends Controller
         return view('panel', compact('user'));
     }
 
-    public function editPerfil(Request $request)
+    public function update(Request $request)
     {
         $user = auth()->user();
+
         $request->validate([
-            'name' => ['required', 'string', 'max:255']
+            'name' => 'required|string|max:255',
+
+            //Esto dice a las base de datos que si es el el correo de este usuario si puede cambiarlo. Para que si solo cambiamos el nombre funcione
+            'email' => 'required|email|unique:users,email,' . $user->id,
         ]);
-        User::edit([
-            'name'=>$request->name
-        ]);
-        return redirect()->intended('/panel');
+
+        $user->update($request->all());
+
+        return redirect()->route('panel', $user)->with('info', 'Usuario actualizado con éxito');
     }
 }

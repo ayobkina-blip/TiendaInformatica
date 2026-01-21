@@ -22,6 +22,8 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/menu', [ProductosController::class, 'index'])->name('menu');
 
     Route::get('/panel', [PerfilController::class, 'showPerfil'])->name('panel');
+
+    Route::put('/panel', [PerfilController::class, 'update'])->name('user.update');
     
     Route::get('/menu/{producto}', [ProductosController::class, 'show'])->name('productos.show');
     
