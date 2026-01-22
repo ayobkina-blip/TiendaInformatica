@@ -11,7 +11,12 @@ class PerfilController extends Controller
     {
         $user = auth()->user();
 
-        return view('panel', compact('user'));
+        return view('panel.informacion', compact('user'));
+    }
+
+    public function showPedidos()
+    {
+        return view('panel.pedidos');
     }
 
     public function update(Request $request)
@@ -27,6 +32,6 @@ class PerfilController extends Controller
 
         $user->update($request->all());
 
-        return redirect()->route('panel', $user)->with('info', 'Usuario actualizado con éxito');
+        return redirect()->route('panel.informacion', $user)->with('info', 'Usuario actualizado con éxito');
     }
 }

@@ -36,7 +36,7 @@
         </li>
         {{-- Mi cuenta --}}
         <li>
-            <a href="{{ route('panel') }}  ">
+            <a href="{{ route('panel.informacion') }}  ">
                 <x-heroicon-o-user-circle class="icon-nav icon" />
             </a>
         </li>

@@ -21,9 +21,11 @@ Route::middleware(['auth'])->group(function () {
     
     Route::get('/menu', [ProductosController::class, 'index'])->name('menu');
 
-    Route::get('/panel', [PerfilController::class, 'showPerfil'])->name('panel');
+    Route::get('/panel/informacion', [PerfilController::class, 'showPerfil'])->name('panel.informacion');
 
-    Route::put('/panel', [PerfilController::class, 'update'])->name('user.update');
+    Route::put('/panel/informacion', [PerfilController::class, 'update'])->name('user.update');
+
+    Route::get('/panel/pedidos', [PerfilController::class, 'showPedidos'])->name('panel.pedidos');
     
     Route::get('/menu/{producto}', [ProductosController::class, 'show'])->name('productos.show');
     

@@ -30,6 +30,7 @@ return new class extends Migration
         //Creacion de la tabla compras_realizadas
         Schema::create('compras_realizadas', function (Blueprint $table) {
             $table->id();
+            $table->integer('estado');
             $table->timestamps();
             $table->foreignId('producto_id');
             $table->foreignId('usuario_id');
